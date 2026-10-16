@@ -1,0 +1,1340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Irene Udebuana — dentist, software developer and founder of RobotProf.">
+  <title>Irene Udebuana | Developer Portfolio</title>
+
+  <style>
+    :root {
+      --blue: #2458e8;
+      --blue-light: #edf2ff;
+      --black: #151515;
+      --grey: #666666;
+      --light-grey: #f5f6f8;
+      --border: #e7e7e7;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #444;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links .contact-link {
+      color: var(--white);
+      background: var(--blue);
+      padding: 10px 17px;
+      border-radius: 6px;
+    }
+
+    .nav-links .contact-link:hover {
+      background: #1745c5;
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 105px 0 95px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      font-size: clamp(2.7rem, 6vw, 4.7rem);
+      line-height: 1.06;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      color: var(--grey);
+      font-size: 1.08rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border: 1px solid var(--blue);
+      border-radius: 6px;
+      background: var(--blue);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #1745c5;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--black);
+      border-color: #d8d8d8;
+    }
+
+    .button.secondary:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .hero-note {
+      border-left: 3px solid var(--blue);
+      padding: 8px 0 8px 20px;
+      color: var(--grey);
+      font-size: 0.95rem;
+    }
+
+    .hero-note strong {
+      display: block;
+      color: var(--black);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-note p + p {
+      margin-top: 8px;
+    }
+
+    /* Shared sections */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 36px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      letter-spacing: -1.3px;
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      margin-top: 12px;
+      max-width: 590px;
+    }
+
+    /* About */
+
+    .about {
+      background: var(--light-grey);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #505050;
+      margin-bottom: 17px;
+    }
+
+    .about-text strong {
+      color: var(--black);
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .detail {
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .detail .number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 5px;
+    }
+
+    .detail p {
+      color: var(--grey);
+      font-size: 0.9rem;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .skill:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+    }
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 7px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 17px;
+    }
+
+    .skill h3 {
+      font-size: 1rem;
+      margin-bottom: 7px;
+    }
+
+    .skill p {
+      color: var(--grey);
+      font-size: 0.88rem;
+    }
+
+    /* Projects */
+
+    .projects {
+      background: var(--light-grey);
+    }
+
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background: white;
+      color: #444;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      transition: 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      min-width: 0;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .project-card.hidden {
+      display: none;
+    }
+
+    /* CSS illustrations: replace these with real screenshots later. */
+
+    .project-visual {
+      height: 220px;
+      padding: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #edf2ff;
+    }
+
+    .browser {
+      width: 100%;
+      max-width: 360px;
+      min-height: 155px;
+      padding: 13px;
+      background: white;
+      border: 1px solid #e0e4ed;
+      border-radius: 7px;
+      box-shadow: 0 8px 25px rgba(28, 52, 100, 0.08);
+    }
+
+    .browser-top {
+      display: flex;
+      gap: 5px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .browser-top span {
+      width: 7px;
+      height: 7px;
+      background: #d4d8e1;
+      border-radius: 50%;
+    }
+
+    .mock-title {
+      margin-top: 16px;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .mock-title span {
+      color: var(--blue);
+    }
+
+    .mock-line {
+      width: 75%;
+      height: 5px;
+      background: #e9ebf0;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .mock-line.short {
+      width: 48%;
+    }
+
+    .mock-button {
+      display: inline-block;
+      margin-top: 13px;
+      padding: 6px 12px;
+      background: var(--blue);
+      color: white;
+      border-radius: 3px;
+      font-size: 0.65rem;
+    }
+
+    .visual-kids {
+      background: #f0f8f2;
+    }
+
+    .kids-art {
+      width: 100%;
+      max-width: 330px;
+      text-align: center;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid #e4eee6;
+    }
+
+    .kids-art .sun {
+      display: inline-grid;
+      place-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #fff0bd;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .kids-art h3 {
+      font-size: 1.15rem;
+    }
+
+    .kids-art p {
+      font-size: 0.75rem;
+      color: var(--grey);
+    }
+
+    .kids-art .green-line {
+      height: 5px;
+      width: 60%;
+      margin: 13px auto 0;
+      background: #5b9b68;
+      border-radius: 10px;
+    }
+
+    .visual-health {
+      background: #f1f5f9;
+    }
+
+    .health-art {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .health-tile {
+      min-height: 85px;
+      padding: 14px;
+      background: white;
+      border: 1px solid #e0e7ef;
+      border-radius: 7px;
+    }
+
+    .health-tile .tile-symbol {
+      font-size: 1.2rem;
+      color: var(--blue);
+    }
+
+    .health-tile p {
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .visual-drain {
+      background: #eef4ff;
+    }
+
+    .drain-art {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid #e1e7f0;
+      border-radius: 8px;
+    }
+
+    .drain-grid {
+      width: 120px;
+      height: 95px;
+      border: 7px solid #252525;
+      border-radius: 5px;
+      background: repeating-linear-gradient(
+        0deg,
+        #d6e0ed 0,
+        #d6e0ed 4px,
+        #fff 4px,
+        #fff 11px
+      );
+      transform: rotate(-8deg);
+    }
+
+    .drain-drop {
+      position: absolute;
+      top: 22px;
+      right: 45px;
+      color: var(--blue);
+      font-size: 1.5rem;
+    }
+
+    .project-content {
+      padding: 23px;
+    }
+
+    .project-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .project-type {
+      color: var(--blue);
+      background: var(--blue-light);
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 0.73rem;
+      font-weight: 700;
+    }
+
+    .project-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 9px;
+      letter-spacing: -0.4px;
+    }
+
+    .project-content > p {
+      color: var(--grey);
+      font-size: 0.92rem;
+      margin-bottom: 17px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .tags span {
+      padding: 5px 9px;
+      background: #f3f4f6;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: #444;
+    }
+
+    .project-link {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-copy > p {
+      max-width: 450px;
+      color: var(--grey);
+      margin-top: 15px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .contact-item span {
+      color: var(--grey);
+      font-size: 0.8rem;
+    }
+
+    .contact-item a {
+      width: fit-content;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item a:hover {
+      color: var(--blue);
+    }
+
+    .contact-card {
+      align-self: center;
+      padding: 30px;
+      background: var(--light-grey);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .contact-card p {
+      color: var(--grey);
+      margin-bottom: 22px;
+      font-size: 0.93rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--grey);
+      font-size: 0.83rem;
+    }
+
+    .footer-inner a {
+      color: var(--blue);
+    }
+
+    /* Small reveal animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 760px) {
+      nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 17px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links .contact-link {
+        display: inline-block;
+        text-align: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 75px 0 70px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .hero-note {
+        max-width: 440px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        height: 205px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container {
+        width: 91%;
+      }
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-details {
+        gap: 10px;
+      }
+
+      .detail {
+        padding: 15px;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+      .project-content {
+        padding: 19px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Irene<span>.</span></a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="contact-link">Get in touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INTRO -->
+
+    <section class="container hero" id="home">
+      <div>
+        <p class="eyebrow">Dentist · Software Developer · Founder</p>
+
+        <h1>
+          Hello, I'm Irene.<br>
+          I like <span>building things.</span>
+        </h1>
+
+        <p class="hero-copy">
+          I'm a dentist who enjoys writing code, solving problems, and
+          figuring out how technology can make everyday life a little better.
+          I build projects across software, education, and healthcare.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="button">See what I've built ↗</a>
+          <a
+            href="https://github.com/robotprofng"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button secondary"
+          >My GitHub</a>
+        </div>
+      </div>
+
+      <aside class="hero-note">
+        <strong>A little about me</strong>
+        <p>Based in Nigeria 🇳🇬</p>
+        <p>Dentistry by profession.</p>
+        <p>Curious about software, AI and healthcare technology.</p>
+        <p>Building things and learning as I go.</p>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-text reveal">
+          <div class="section-heading">
+            <p class="eyebrow">A bit of context</p>
+            <h2>Medicine is my background. Building is my thing.</h2>
+          </div>
+
+          <p>
+            I'm a dentist with an interest in how software can solve
+            practical problems, especially in healthcare and education.
+          </p>
+
+          <p>
+            I founded <strong>RobotProf</strong> to make technology
+            education more accessible, and <strong>Kids in LET</strong>
+            to introduce young people to environmental sustainability
+            through hands-on technology.
+          </p>
+
+          <p>
+            I work with Python, web technologies and data tools, and I'm
+            interested in the space where healthcare, software and robotics
+            meet. I don't have everything figured out. I just like learning
+            by building.
+          </p>
+        </div>
+
+        <div class="about-details reveal">
+          <div class="detail">
+            <div class="number">01</div>
+            <p>Healthcare and clinical experience</p>
+          </div>
+
+          <div class="detail">
+            <div class="number">02</div>
+            <p>Software and data projects</p>
+          </div>
+
+          <div class="detail">
+            <div class="number">03</div>
+            <p>Founder, RobotProf</p>
+          </div>
+
+          <div class="detail">
+            <div class="number">04</div>
+            <p>Environmental tech education</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What I work with</p>
+          <h2>Skills & tools</h2>
+          <p>
+            A mix of things I've used to build projects and explore ideas.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill reveal">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>Web Development</h3>
+            <p>HTML, CSS and JavaScript for responsive websites and interactive interfaces.</p>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-icon">Py</div>
+            <h3>Python</h3>
+            <p>Writing scripts, working with data, and building small applications.</p>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-icon">AI</div>
+            <h3>AI & Machine Learning</h3>
+            <p>Exploring machine learning applications and AI tools for real problems.</p>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-icon">#</div>
+            <h3>Data Science</h3>
+            <p>Data analysis, statistics, visualisation and research workflows.</p>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-icon">Git</div>
+            <h3>Git & GitHub</h3>
+            <p>Version control, project documentation and sharing code.</p>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill-icon">+</div>
+            <h3>Healthcare Technology</h3>
+            <p>Bringing clinical experience into software and technology projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A few things I've worked on</p>
+          <h2>Projects</h2>
+          <p>
+            Different interests, different problems, and plenty still to learn.
+          </p>
+        </div>
+
+        <div class="project-filters" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All projects</button>
+          <button class="filter-btn" data-filter="education" aria-pressed="false">Education</button>
+          <button class="filter-btn" data-filter="healthcare" aria-pressed="false">Healthcare</button>
+          <button class="filter-btn" data-filter="software" aria-pressed="false">Software</button>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- 1. ROBOTPROF -->
+
+          <article class="project-card reveal" data-category="education">
+            <div class="project-visual">
+              <div class="browser">
+                <div class="browser-top">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-title">Learn something.<br><span>Build something.</span></div>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-button">Explore RobotProf</div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-type">Education · EdTech</span>
+              </div>
+              <h3>RobotProf</h3>
+              <p>
+                My technology education venture. RobotProf has grown from
+                coding and robotics education into AI training, including
+                applications for healthcare professionals.
+              </p>
+              <div class="tags">
+                <span>EdTech</span>
+                <span>AI</span>
+                <span>Education</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://robotprof.name.ng/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Visit website ↗</a>
+              <span> · </span>
+              <a
+                class="project-link"
+                href="https://github.com/robotprofng"
+                target="_blank"
+                rel="noopener noreferrer"
+              >GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- 2. KIDS IN LET -->
+
+          <article class="project-card reveal" data-category="education">
+            <div class="project-visual visual-kids">
+              <div class="kids-art">
+                <div class="sun">☀</div>
+                <h3>Kids in LET</h3>
+                <p>Leadership · Environment · Technology</p>
+                <div class="green-line"></div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-type">Social impact</span>
+              </div>
+              <h3>Kids in LET</h3>
+              <p>
+                A youth initiative introducing children and young people
+                to environmental sustainability and hands-on technology
+                through workshops and Eco-Tech activities.
+              </p>
+              <div class="tags">
+                <span>Climate</span>
+                <span>STEM</span>
+                <span>Solar technology</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://github.com/robotprofng"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Explore projects ↗</a>
+            </div>
+          </article>
+
+          <!-- 3. HEALTHCARE AI -->
+
+          <article class="project-card reveal" data-category="healthcare">
+            <div class="project-visual visual-health">
+              <div class="health-art">
+                <div class="health-tile">
+                  <div class="tile-symbol">⌘</div>
+                  <p>Clinical data</p>
+                </div>
+                <div class="health-tile">
+                  <div class="tile-symbol">⌁</div>
+                  <p>AI models</p>
+                </div>
+                <div class="health-tile">
+                  <div class="tile-symbol">▤</div>
+                  <p>Analysis</p>
+                </div>
+                <div class="health-tile">
+                  <div class="tile-symbol">+</div>
+                  <p>Healthcare</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-type">Healthcare · AI</span>
+              </div>
+              <h3>AI for Healthcare</h3>
+              <p>
+                Exploring how data science and AI can support healthcare
+                research, clinical learning and problem-solving.
+                This section can link to individual projects as they are published.
+              </p>
+              <div class="tags">
+                <span>Python</span>
+                <span>Machine learning</span>
+                <span>Health data</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://github.com/robotprofng"
+                target="_blank"
+                rel="noopener noreferrer"
+              >View code on GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- 4. DRAIN DEFENDERS — LAST -->
+
+          <article class="project-card reveal" data-category="software">
+            <div class="project-visual visual-drain">
+              <div class="drain-art">
+                <div class="drain-grid"></div>
+                <div class="drain-drop">⌁</div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-type">Software project</span>
+              </div>
+              <h3>Drain Defenders</h3>
+              <p>
+                A project focused on the problem of blocked drainage
+                and environmental waste. Add the specific features,
+                implementation details and outcomes of your version here.
+              </p>
+              <div class="tags">
+                <span>Problem-solving</span>
+                <span>Software</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://github.com/robotprofng"
+                target="_blank"
+                rel="noopener noreferrer"
+              >View project ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Let's connect</p>
+            <h2>Have an idea or a project?</h2>
+          </div>
+
+          <p>
+            I'm open to software development opportunities, interesting
+            collaborations, and conversations about healthcare technology.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <span>Email</span>
+              <a href="mailto:ireneudebuana@gmail.com">ireneudebuana@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+              <span>Phone</span>
+              <a href="tel:+2349120432208">09120432208</a>
+            </div>
+
+            <div class="contact-item">
+              <span>GitHub</span>
+              <a href="https://github.com/robotprofng" target="_blank" rel="noopener noreferrer">
+                github.com/robotprofng ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <h3>Prefer WhatsApp?</h3>
+          <p>
+            Send me a message directly. It's probably the easiest way to reach me.
+          </p>
+          <a
+            class="button"
+            href="https://wa.me/2349120432208?text=Hello%20Irene%2C%20I%20visited%20your%20portfolio."
+            target="_blank"
+            rel="noopener noreferrer"
+          >Message me on WhatsApp ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Irene Udebuana</p>
+      <p>Made with HTML, CSS & JavaScript.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Close mobile menu after clicking a link
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Filter projects by category
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter;
+
+        filterButtons.forEach(item => {
+          const isActive = item === button;
+          item.classList.toggle("active", isActive);
+          item.setAttribute("aria-pressed", isActive);
+        });
+
+        projectCards.forEach(card => {
+          const matches =
+            selectedFilter === "all" ||
+            card.dataset.category === selectedFilter;
+
+          card.classList.toggle("hidden", !matches);
+        });
+      });
+    });
+
+    // Reveal sections as they enter the screen
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
+
+    // Automatically update the footer year
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
