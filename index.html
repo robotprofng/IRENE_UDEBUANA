@@ -1181,7 +1181,7 @@
 
     <div class="section-heading reveal">
       <p class="eyebrow">TECHNICAL SKILLS</p>
-      <h2>My Tech Stack</h2>
+      <h2>What I Work With</h2>
     </div>
 
     <div class="technical-grid">
@@ -1189,7 +1189,7 @@
       <article class="technical-card reveal">
         <div class="symbol">&lt;/&gt;</div>
         <h3>Frontend Development</h3>
-        <p>HTML, CSS, JavaScript, Responsive Web Design</p>
+        <p>HTML, CSS, JavaScript</p>
       </article>
 
       <article class="technical-card reveal">
@@ -1216,6 +1216,245 @@
 
 
 
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+
+  <style>
+    /* PROJECT GRID: TWO COLUMNS, TWO ROWS */
+    #projects .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    #projects .project-card {
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #projects .project-image {
+      width: 100%;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+
+    #projects .project-image a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    #projects .project-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    #projects .project-card:hover .project-image img {
+      transform: scale(1.03);
+    }
+
+    #projects .project-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px;
+    }
+
+    #projects .project-actions {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    /* MOBILE LAYOUT */
+    @media (max-width: 600px) {
+      #projects .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      #projects .project-content {
+        padding: 20px;
+      }
+    }
+  </style>
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <p class="eyebrow">SELECTED WORK</p>
+      <h2>Projects I've Built</h2>
+      <p>Web development, education and healthcare AI.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1: ROBOTPROF -->
+      <article class="project-card reveal">
+        <div class="project-image">
+          <a href="https://robotprof.name.ng/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img
+              src="images/robotprof.png"
+              alt="RobotProf website"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="project-content">
+          <span class="project-category">WEB DEVELOPMENT · EDTECH</span>
+          <h3>RobotProf</h3>
+          <p class="project-description">
+            A technology education venture providing coding,
+            robotics and AI training.
+          </p>
+
+          <div class="project-tags">
+            <span>Web Development</span>
+            <span>Education</span>
+            <span>AI</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="project-link"
+               href="https://robotprof.name.ng/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Visit Website ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: KIDS IN LET -->
+      <article class="project-card reveal">
+        <div class="project-image">
+          <a href="https://kidsinlet.name.ng/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img
+              src="images/kids-in-let.png"
+              alt="Kids in LET website"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="project-content">
+          <span class="project-category">WEB DEVELOPMENT · SOCIAL IMPACT</span>
+          <h3>Kids in LET</h3>
+          <p class="project-description">
+            A youth initiative combining environmental sustainability,
+            leadership and hands-on technology education.
+          </p>
+
+          <div class="project-tags">
+            <span>Education</span>
+            <span>Climate</span>
+            <span>Technology</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="project-link"
+               href="https://kidsinlet.name.ng/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Visit Website ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: AI HISTOLOGY IMAGE CLASSIFIER -->
+      <article class="project-card reveal">
+        <div class="project-image">
+          <a href="https://histoimagemodelclass.streamlit.app/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img
+              src="images/histology-classifier.png"
+              alt="AI histology image classifier for oral pathology"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="project-content">
+          <span class="project-category">HEALTHCARE AI</span>
+          <h3>AI Histology Image Classifier</h3>
+          <p class="project-description">
+            An AI application for exploring histology image
+            classification in oral pathology.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>AI</span>
+            <span>Oral Pathology</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="project-link"
+               href="https://histoimagemodelclass.streamlit.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Launch App ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: ORAL SCC AI PREDICTOR -->
+      <article class="project-card reveal">
+        <div class="project-image">
+          <a href="https://scc-ai-predictor.streamlit.app/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img
+              src="images/oral-scc-predictor.png"
+              alt="Oral SCC AI predictor application"
+              loading="lazy"
+            />
+          </a>
+        </div>
+
+        <div class="project-content">
+          <span class="project-category">HEALTHCARE AI · DATA</span>
+          <h3>Oral SCC AI Predictor</h3>
+          <p class="project-description">
+            An AI application exploring oral squamous cell carcinoma
+            prediction using clinical data.
+          </p>
+
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Healthcare</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="project-link"
+               href="https://scc-ai-predictor.streamlit.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Launch App ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
     <!-- PROJECTS -->
     <section class="section" id="projects">
