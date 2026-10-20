@@ -1071,34 +1071,93 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
     
+    
+<!-- ABOUT -->
 <section class="section" id="about">
+  <style>
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      align-items: center;
+      gap: 60px;
+    }
+
+    #about .about-copy {
+      min-width: 0;
+    }
+
+    #about .about-copy h2 {
+      margin-bottom: 20px;
+    }
+
+    #about .about-copy > p:last-child {
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    #about .about-image {
+      width: 100%;
+      max-width: 360px;
+      justify-self: end;
+      padding: 10px;
+      border: 1px solid #d9e1e8;
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: 0 12px 35px rgba(20, 40, 60, 0.10);
+    }
+
+    #about .about-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      #about .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      #about .about-image {
+        max-width: 300px;
+        justify-self: start;
+      }
+    }
+  </style>
+
   <div class="container about-grid">
+
+    <!-- ABOUT TEXT -->
     <div class="about-copy reveal">
-      <div class="section-heading">
-        <p class="eyebrow">ABOUT ME</p>
-        <h2>I don't just study technology. I build with it.</h2>
+      <p class="eyebrow">ABOUT ME</p>
 
-        <p>
-          I'm Dr. Irene Udebuana, a dentist and software developer.
-          Through RobotProf and Kids in LET, I've put technology
-          to work in education and social impact. Now, I'm focused
-          on building software for businesses and organisations.
-        </p>
+      <h2>I don't just study technology. I build with it.</h2>
 
-        <div class="about-image reveal">
+      <p>
+        I'm Dr. Irene Udebuana, a dentist and software developer.
+        Through RobotProf and Kids in LET, I've put technology
+        to work in education and social impact. Now, I'm focused
+        on building software for businesses and organisations.
+      </p>
+    </div>
+
+    <!-- FRAMED PROFILE PHOTO -->
+    <div class="about-image reveal">
       <img
         src="images/irene.jpg"
         alt="Dr. Irene Udebuana"
         loading="lazy"
       />
     </div>
-      </div>
-    </div>
+
   </div>
 </section>
 
+    
     <!-- SKILLS -->
     <section class="section skills-section" id="skills">
       <div class="container">
