@@ -929,6 +929,52 @@
         transform: none;
       }
     }
+
+    
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-copy h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-copy > p:last-child {
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  justify-self: end;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+/* Stack the content on smaller screens */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-image {
+    max-width: 320px;
+    justify-self: start;
+  }
+}
+
   </style>
 </head>
 
@@ -1040,6 +1086,14 @@
           to work in education and social impact. Now, I'm focused
           on building software for businesses and organisations.
         </p>
+
+        <div class="about-image reveal">
+      <img
+        src="images/irene.jpg"
+        alt="Dr. Irene Udebuana"
+        loading="lazy"
+      />
+    </div>
       </div>
     </div>
   </div>
